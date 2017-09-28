@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>first</title>
+</head>
+<body>
+<script>
+    window.onload=function() {
+        var count = 0;
+        var x=0;
+        var y=0;
+var time;
+       document.getElementById("star").onclick=function() {
+
+          time=  setInterval(function(){
+
+              document.getElementById("out").innerHTML=Math.floor(count/1000)+" сек "+count%1000+" миллисек";
+          count++;
+          }, 1);
+        }
+        document.getElementById("paus").onclick=function() {
+            clearInterval(time);
+        }
+        document.getElementById("sto").onclick=function() {
+
+            clearInterval(time);
+            document.getElementById("out").innerHTML=0;
+            count=0;
+        }
+    }
+    </script>
+<div style="background-color: darkslategray; width: 20%; height: 40%">
+<p id="out" style="color: azure;text-align: center "><br></p>
+<input id="star" type="button" value="start" >
+<input id="paus" type="button" value="pause" >
+<input id="sto" type="button" value="stop" >
+</div>
+</body>
+</html>

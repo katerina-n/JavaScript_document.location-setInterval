@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3</title>
+</head>
+<body>
+<script>
+
+var a=prompt("введите строку с действием");
+if(a){
+    if(a.indexOf('+')>-1){
+    var mass=a.split("+");
+    var answer=parseInt(mass[0])+parseInt(mass[1]);
+    document.write(answer);
+    }
+   else {
+        if (a.indexOf('-')>-1) {
+            var mass=a.split("-");
+           document.write( parseInt(mass[0])-parseInt(mass[1]));
+           // document.write(answer);
+        }
+        else {
+            if (a.indexOf('*')>-1) {
+                var mass=a.split('*');
+                var answer=parseInt(mass[0])*parseInt(mass[1]);
+                document.write(answer);
+            }
+            else {
+                if (a.indexOf('/')>-1) {
+                    var mass=a.split('/');
+                    if(mass[1]!=0) {
+                        var answer = parseInt(mass[0]) / parseInt(mass[1]);
+                        document.write(answer);
+                    }
+                    else{
+                        document.write("Деление на 0!");
+                    }
+                }
+            }
+        }
+    }
+}
+ </script>
+</body>
+</html>
